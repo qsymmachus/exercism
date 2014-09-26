@@ -1,17 +1,6 @@
 module Complement
-  DNA_COMPLEMENTS = {
-    'G' => 'C',
-    'C' => 'G',
-    'T' => 'A',
-    'A' => 'U'
-  }
-
-  RNA_COMPLEMENTS = {
-    'G' => 'C',
-    'C' => 'G',
-    'U' => 'A',
-    'A' => 'T'
-  }
+  DNA_COMPLEMENTS = {'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U'}
+  RNA_COMPLEMENTS = DNA_COMPLEMENTS.invert
 
   class << self
     def of_dna(dna)
@@ -26,7 +15,7 @@ module Complement
 
     def nucleotide_complement(strand, complements)
       strand.length.times do |i|
-        strand[i] = complements[strand[i]] unless complements[strand[i]].nil?
+        strand[i] = complements[strand[i]]
       end
       strand
     end
