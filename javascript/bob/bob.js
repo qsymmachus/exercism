@@ -1,14 +1,32 @@
-//
-// This is only a SKELETON file for the "Bob" exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
-//
-// YOUR CODE GOES HERE
-//
+  if (isBlank(input)) {
+    return "Fine. Be that way!";
+  } else if (isUpperCase(input)) {
+    return "Whoa, chill out!";
+  } else if (isQuestion(input)) {
+    return "Sure."
+  } else {
+    return "Whatever.";
+  }
 };
+
+function isBlank(string) {
+  return /^\s*$/.test(string);
+}
+
+function isUpperCase(string) {
+  if (!hasLetters(string)) return false;
+  return string === string.toUpperCase() ? true : false; 
+}
+
+function isQuestion(string) {
+  return string[string.length - 1] === '?' ? true : false;
+}
+
+function hasLetters(string) {
+  return /[a-zA-Z]/.test(string)
+}
 
 module.exports = Bob;
