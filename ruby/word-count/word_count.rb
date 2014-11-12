@@ -1,7 +1,7 @@
 class Phrase
   def initialize(string)
     @string = string
-    @counts = {}
+    @counts = Hash.new(0)
   end
 
   def word_count
@@ -9,7 +9,7 @@ class Phrase
     @string.split(/[\s,]/).each do |word|
       word = normalize(word)
       next if word.empty?
-      @counts[word] ? @counts[word] += 1 : @counts[word] = 1
+      @counts[word] += 1
     end
     @counts
   end
