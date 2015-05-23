@@ -1,0 +1,21 @@
+(load-file 'rna_transcription_test.clj)
+(load-file 'rna_transcription_test.clj')
+(load-file rna_transcription_test.clj)
+(load-file "rna_transcription_test.clj")
+(load-file "rna_transcription.clj")
+(rna-transcription/convert-nucleotide "A")
+(map rna-transcription/convert-nucleotide "ACT")
+(map convert-nucleotide "ACT")
+(map rna-transcription/convert-nucleotide "ACT")
+(rna-transcription/convert-nucleotide "A")
+(rna-transcription/convert-nucleotide "G")
+(map rna-transcription/convert-nucleotide "ACT")
+(map rna-transcription/convert-nucleotide (seq "ACT"))
+(seq "ACT")
+exit
+(load-file "rna_transcription.clj")
+(map rna-transcription/convert-nucleotide (seq "ACT"))
+(apply str (map rna-transcription/convert-nucleotide (seq "ACT")))
+exit
+(load-file "rna_transcription_test.clj")
+exit
