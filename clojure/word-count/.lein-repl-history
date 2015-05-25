@@ -26,3 +26,5 @@ exit
 clear
 (load-file "word_count_test.clj")
 exit
+(load-file "word_count_test.clj")
+exit

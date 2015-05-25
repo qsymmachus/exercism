@@ -1,4 +1,5 @@
-(ns word-count)
+(ns word-count
+  (:require [clojure.string :as str]))
 
 (declare normalize-word)
 
@@ -6,11 +7,11 @@
   "Return a word count map for a given string."
   [string]
   (frequencies
-    (filter (fn [word] (not (clojure.string/blank? word)))
+    (filter (fn [word] (not (str/blank? word)))
       (map normalize-word 
-        (clojure.string/split string #" ")))))
+        (str/split string #" ")))))
 
 (defn normalize-word
   "Normalize a string by removing punctuation and converting it to lower case."
   [string]
-  (clojure.string/lower-case (clojure.string/replace string #"\W" "")))
+  (str/lower-case (str/replace string #"\W" "")))
