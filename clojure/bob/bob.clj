@@ -1,4 +1,5 @@
-(ns bob)
+(ns bob
+  (:require [clojure.string :as cstr]))
 
 (defn yelling?
   "Checks whether a string 'yelling'. A string is yelling if:
@@ -6,7 +7,7 @@
     2. It contains at least one letter."
   [string]
   (and 
-    (= string (clojure.string/upper-case string)) 
+    (= string (cstr/upper-case string)) 
     (re-find #"[a-zA-Z]" string)))
 
 (defn question?
@@ -18,7 +19,7 @@
   "Bob the lackadaisical teenager will respond to your statements."
   [statement]
   (cond
-    (clojure.string/blank? statement) (str "Fine. Be that way!")
+    (cstr/blank? statement) (str "Fine. Be that way!")
     (yelling? statement) (str "Whoa, chill out!")
     (question? statement) (str "Sure.")
     :else (str "Whatever.")))
