@@ -1,0 +1,12 @@
+(clojure.string/split "asdf" #"")
+(= (clojure.string/split "asdf" #"") (clojure.string/split "asdf" #""))
+(= (clojure.string/split "asdf" #"") (clojure.string/split "fdsa" #""))
+(= (sort (clojure.string/split "asdf" #"")) (sort (clojure.string/split "fdsa" #"")))
+(load-file "anagram_test.clj")
+exit
+(load-file "anagram_test.clj")
+(anagram/anagrams-for "Orchestra" ["cashregister" "Carthorse" "radishes"]))
+(anagram/anagrams-for "Orchestra" ["cashregister" "Carthorse" "radishes"])
+(clojure.string/split "safd" #"")
+(load-file "anagram_test.clj")
+exit
