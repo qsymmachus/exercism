@@ -8,7 +8,7 @@
   [string]
   (and 
     (= string (cstr/upper-case string)) 
-    (re-find #"[a-zA-Z]" string)))
+    (re-find #"\p{L}" string)))
 
 (defn question?
   "Checks whether a string is question (that is, whether it ends in '?')."
@@ -19,7 +19,7 @@
   "Bob the lackadaisical teenager will respond to your statements."
   [statement]
   (cond
-    (cstr/blank? statement) (str "Fine. Be that way!")
-    (yelling? statement) (str "Whoa, chill out!")
-    (question? statement) (str "Sure.")
-    :else (str "Whatever.")))
+    (cstr/blank? statement) "Fine. Be that way!"
+    (yelling? statement) "Whoa, chill out!"
+    (question? statement) "Sure."
+    :else "Whatever."))
