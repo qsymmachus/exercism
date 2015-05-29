@@ -1,0 +1,52 @@
+(load-file "beer_song_test.clj")
+exit
+(defn my-seq (cons "." (my-seq))
+)
+(defn my-seq [] (cons "." (my-seq))
+)
+(take 3 (my-seq))
+(my-seq)
+exit
+(format "%d" 2)
+(format "%d-1" 2)
+(format "%d %d" 2)
+(format "%d %d" 2 3)
+(load-file "beer_song_test.clj")
+(beer-song/verse 3)
+(def beer-count 5)
+(format "%d bottles of beer on the wall, %d bottles
+                                 of beer.\n Take one down and pass it around,
+                                 %d bottles of beer on the wall.\n"
+                                 beer-count beer-count (- beer-count 1))
+exit
+(verse 1)
+(format "%d bottles of beer on the wall, %d bottles of beer.\nTake one down and pass it around, %d bottle of beer on the wall." 
+            2 2 (dec 2))
+(load-file "beer_song.clj")
+(verse 3)
+(beer-song/verse 3)
+(beer-song/verse 0)
+(beer-song/verse 1)
+(beer-song/verse 3)
+(load-file "beer_song.clj")
+(beer-song/verse 3)
+(load-file "beer_song.clj")
+(beer-song/verse 3)
+(beer-song/verse 2)
+(load-file "beer_song_test.clj")
+(concat "asdf" "sadf")
+(str (concat "asdf" "sadf"))
+(seq 
+"asdf")
+(str 
+(str '(1 2 3))
+(str (1 2 3))
+(str (\a \s \d \f))
+(apply str (\a \s \d \f))
+(concat "asdf "asdf")
+(concat "asdf" "asdf")
+(apply str (concat "asdf" "asdf"))
+(load-file "beer_song_test.clj")
+(load-file "beer_song.clj")
+(load-file "beer_song_test.clj")
+exit
