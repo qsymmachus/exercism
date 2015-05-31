@@ -1,0 +1,17 @@
+(frequencies (seq "asdf"))
+(load-file "nucleotide_count_test.clj")
+(into {} (for [[k v] (group-by identity "abbbc")] [k (count v)]))
+(into {} (for [[k v] ("abbbc")] [k (count v)])
+(into {} (for [[k v] ("abbbc")] [k (count v)]))
+(into {} (for [[k v] (seq "abbbc")] [k (count v)]))
+(reduce (f [x] (inc x)) 0 (seq "asdf"))
+(reduce (fn [x] (inc x)) 0 (seq "asdf"))
+(reduce (fn [x] (inc x)) (seq "asdf"))
+(reduce (fn [string x] (inc x)) 0 (seq "asdf"))
+(reduce (fn [string x] (println x)) 0 (seq "asdf"))
+(load-file "nucleotide_count_test.clj")
+(nucleotide-count/count \T "GGGGGTAACCCGG")
+(nucleotide-count/nucleotide-counts "GGGGGTAACCCGG")
+(load-file "nucleotide_count_test.clj")
+git add .
+exit
