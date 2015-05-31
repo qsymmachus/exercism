@@ -11,13 +11,17 @@
 
 (defn sing
     "This is a multi-arity function.
-        1. Given a single verse number, returns a verse of the 'beer song'.
+        1. Given a single verse number, returns the beer song starting at that
+        verse and ending with the last verse.
         2. Given starting and ending verse numbers, returns multiple verses of
-        the 'beer song' recursively."
-    ([n] (verse n))
+        the 'beer song' in that range.
+    All but the last verse are separated by two newline characters."
+    ([n] 
+        (sing n 0))
     ([start end]
-    (if (<= start end)
-        ""
-        (apply str (concat 
-            (sing start) 
-            (sing (dec start)))))))
+        (if (< start end)
+            ""
+            (apply str (concat 
+                (verse start)
+                (if (not (= start end)) "\n" "") 
+                (sing (dec start) end))))))
