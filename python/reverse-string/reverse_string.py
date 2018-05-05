@@ -1,5 +1,3 @@
-from functools import reduce
-
 def reverse(input=''):
     if input == '':
         return ''
