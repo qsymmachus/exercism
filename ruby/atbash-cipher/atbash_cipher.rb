@@ -20,31 +20,10 @@ module Atbash
         .strip
     end
 
-    def decode(ciphertext)
-      ciphertext
-        .gsub(/\W/, "")
-        .split("")
-        .map.with_index(1) do |char, i|
-          if i % 5 == 0
-            decode_character(char) + " "
-          else
-            decode_character(char)
-          end
-        end
-        .join
-        .strip
-    end
-
     private
 
     def encode_character(character)
       result = @@encode_mapping[character.downcase]
-
-      result.nil? ? character : result
-    end
-
-    def decode_character(character)
-      result = @@decode_mapping[character.downcase]
 
       result.nil? ? character : result
     end
